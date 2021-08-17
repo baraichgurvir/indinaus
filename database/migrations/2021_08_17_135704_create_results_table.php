@@ -15,6 +15,15 @@ class CreateResultsTable extends Migration
     {
         Schema::create('results', function (Blueprint $table) {
             $table->id();
+            $table->text("image");
+            $table->text("title");
+            $table->text("rating");
+            $table->text("desc");
+            $table->text("price");
+            $table->text("subcat");
+            $table->text("cat");
+            $table->text("address");
+            $table->text("phoneNumber");
             $table->timestamps();
         });
     }

@@ -440,7 +440,7 @@ body {
        <div class="content">
          <h3>New here ?</h3>
          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut optio natus consequatur aliquid provident dignissimos vel sint corporis nobis libero, ratione eius illo. Soluta ullam unde necessitatibus magni quaerat nisi.
+            Sign Up Now.
          </p>
          <button class="btn transparent" id="sign-up-btn">
            Sign up
@@ -452,7 +452,7 @@ body {
        <div class="content">
          <h3>One of us ?</h3>
          <p>
-           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea beatae cupiditate corrupti sed non aperiam tempora, quasi magni optio! Odio molestias laboriosam, corporis voluptatibus nihil perferendis possimus placeat veritatis atque!
+           Login In now?
          </p>
          <button class="btn transparent" id="sign-in-btn">
            Sign in
