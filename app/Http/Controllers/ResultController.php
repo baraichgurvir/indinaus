@@ -20,13 +20,13 @@ class ResultController extends Controller
 
     public function AddResult(Result $result, Request $req)
     {
+        sleep(1);
         $req->validate([
             'image' => 'required',
             'title' => 'required',
-            'desc' => 'required',
             'address' => 'required',
+            'desc' => 'required',
             'rating' => 'required',
-            'phoneNumber' => 'required',
             'cat' => 'required',
             'city' => 'required'
         ]);

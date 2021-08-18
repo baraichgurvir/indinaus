@@ -20,6 +20,10 @@ class MainController extends Controller
     }
 
     public function Search(Request $req) {
+        if ($req->where == null) {
+            $req->where = "Choose City";
+        }
+
         if ($req->where != "Choose City") {
             $results = Result::where(['cat' => $req->what, 'city' => $req->where])->orderBy('rating', 'DESC')->get();
             $resultsCount = Result::where(['cat' => $req->what, 'city' => $req->where])->count();

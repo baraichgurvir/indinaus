@@ -87,10 +87,12 @@
    <form action="/search" id="searchForm">
       <select name="what">
          <option>
-            Choose Category
+            {{ $category }}
          </option>
          @foreach ($cats as $cat)
-            <option>{{ $cat->cat }}</option>
+            @if ($cat->cat != $category)
+               <option>{{ $cat->cat }}</option>
+            @endif
          @endforeach
       </select>
       <select name="where">
