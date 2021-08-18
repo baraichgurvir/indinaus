@@ -18,13 +18,12 @@ class CreateResultsTable extends Migration
             $table->text("image");
             $table->text("title");
             $table->text("rating");
-            $table->text("desc");
             $table->text("price");
+            $table->text("desc");
             $table->text("city");
-            $table->text("website");
-            $table->text("cat");
             $table->text("address");
             $table->text("phoneNumber");
+            $table->text("cat");
             $table->timestamps();
         });
     }

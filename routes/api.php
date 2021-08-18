@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/result/add', [ ResultController::class, 'AddResult' ]);
+Route::get('/result/add', [ ResultController::class, 'AddResult' ]);

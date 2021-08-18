@@ -1116,6 +1116,56 @@ button.vjs-play-control.vjs-control.vjs-button {
   background-color: rgba(21, 20, 26, 0.63);
   border-radius: 10px;
 }
+
+.mainContent {
+  display: none;
+
+}
+form {
+         padding: 2em;
+         display: flex;
+         overflow: hidden;
+         justify-content: space-evenly;
+         align-items: center;
+         border-radius: 25px;
+         min-width: 60% !important;
+         box-sizing: border-box;
+         left: 62%;
+         flex-wrap: wrap;
+      }
+
+      form select,
+      form input {
+        width: 90% !important;
+         font-size: 1.25rem;
+         outline: none;
+         padding: 5px 0;
+         border: none;
+         background: #fff;
+         margin: 20px 10px;
+         border-radius: 5px;
+         padding-left: 15px; 
+         background: transparent;
+         color: #fff;
+         margin-bottom: 20px;
+         font-size: 1.25rem;
+        font-family: 'SF Mono';
+         border: 5px solid #fff;
+      }
+
+      form input[type=submit] {
+         padding-left: 0;
+         font-size: 1.25rem;
+      }
+
+      option {
+        color: #000;
+      }
+
+      form input::placeholder {
+        color: #fff;
+      }
+
    </style>
 </head>
 <body>
@@ -1133,52 +1183,12 @@ button.vjs-play-control.vjs-control.vjs-button {
           Categories
          </a>
          <a class="sidebar-link trending" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
+          <i>
           </i>
           Results
          </a>
-         <a class="sidebar-link" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
-          </i>
-          Streaming
-         </a>
-         <a class="sidebar-link" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
-          </i>
-          Playlist
-         </a>
-         <a class="sidebar-link" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
-          </i>
-          Bookmark
-         </a>
         </div>
-       </div>
-       <div class="side-wrapper">
-        <div class="side-title">CATEGORY</div>
-        <div class="side-menu">
-         <a class="sidebar-link" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
-          </i>
-          Live Stream
-         </a>
-         <a class="sidebar-link" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
-          </i>
-          Tutorial
-         </a>
-         <a class="sidebar-link" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
-          </i>
-          Competation
-         </a>
-         <a class="sidebar-link" href="#">
-          <i viewBox="0 0 24 24" fill="currentColor">
-          </i>
-          Community
-         </a>
         </div>
-       </div>
       </div>
       <div class="wrapper">
        <div class="header">
@@ -1191,20 +1201,44 @@ button.vjs-play-control.vjs-control.vjs-button {
          </div>
         </div>
        </div>
+       <div class="categories mainContent">
+        <form action="/api/result/add" onsubmit="(e) => { e.preventDefault() }">
+           <input type="text" name="title">
+           <input type="text" name="desc">
+           <input type="text" name="address">
+           <input type="text" name="rating">
+           <input type="text" name="phoneNumber">
+           <input type="text" name="price">
+           <select name="cat">
+
+           </select>
+           <select style="display: none" name="subcat">
+
+           </select>
+        </form>
+     </div>
          <div class="results">
             <form action="/api/result/add" onsubmit="(e) => { e.preventDefault() }">
-               <input type="text" name="title">
-               <input type="text" name="desc">
-               <input type="text" name="address">
-               <input type="text" name="rating">
-               <input type="text" name="phoneNumber">
-               <input type="text" name="price">
+              <input type="text" name="image" placeholder="Result Image">
+               <input type="text" name="title" placeholder="Result Title">
+               <input type="text" name="desc" placeholder="Result Desc">
+               <input type="text" name="address" placeholder="Result Address">
+               <input type="text" name="rating" placeholder="Result Rating">
+               <input type="text" name="phoneNumber" placeholder="Result Mobile Number">
+               <input type="text" name="price" placeholder="Result Price">
                <select name="cat">
-
+                <option value="">Select Category</option>
+                @foreach ($cats as $cat)
+                  <option value="{{ $cat->cat }}">{{ $cat->cat }}</option>
+                @endforeach
                </select>
-               <select style="display: none" name="subcat">
-
+               <select name="city">
+                <option value="">Select City</option>
+                @foreach ($cities as $city)
+                <option value="{{ $city->city }}">{{ $city->city }}</option>
+              @endforeach
                </select>
+               <input type="submit" class="background: blue !important" value="Add Result">
             </form>
          </div>
       </div>
