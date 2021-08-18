@@ -10,6 +10,7 @@ class ResultController extends Controller
     private function AddProps(Result $result, array $props) {
         foreach ($props as $key => $prop) {
             if ($prop == '' || $prop == null) $prop = 'not having';
+            if ($key == 'image') $prop = "/Images/" . $prop;
             $result->$key = $prop;
         }
 

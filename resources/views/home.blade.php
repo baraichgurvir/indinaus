@@ -5,7 +5,7 @@
    <style>
       .carousel-item {
          width: 100%;
-         height: 82.5vh;
+         height: 87.5vh;
       }
       .carousel-item img {
          width: 100% !important;
@@ -30,15 +30,18 @@
          padding: 2em;
          background: rgba(255, 255, 255, 0.35);
          display: flex;
+         overflow: hidden;
+         justify-content: space-evenly;
          align-items: center;
          border-radius: 25px;
-         max-width: 60% !important;
+         min-width: 60% !important;
          box-sizing: border-box;
          left: 62%;
       }
 
+      form select,
       form input {
-         width: 350px !important;
+         width: 90% !important;
          font-size: 1.25rem;
          outline: none;
          border: none;
@@ -47,9 +50,11 @@
          border-radius: 5px;
          text-align: center;
          padding: 10px 0;
+         padding-left: 15px; 
       }
 
       form input[type=submit] {
+         padding-left: 0;
          font-size: 1.25rem;
       }
 
@@ -135,10 +140,24 @@
          </div>
          <div class="overlay"></div>
          <div class="container">
-            <form action="/search">
-               <input type="text" name="what" style="text-transform: capitalize" placeholder="What: Ex. Food, Services, Hotels">
-               <input type="text" name="where" placeholder="Where: Your City">
-               <input type="submit" class="btn btn-primary" value="Search">
+            <form action="/search" id="searchForm">
+               <select name="what">
+                  <option>
+                     Choose Category
+                  </option>
+                  @foreach ($cats as $cat)
+                     <option>{{ $cat->cat }}</option>
+                  @endforeach
+               </select>
+               <select name="where">
+                  <option>
+                     Choose City 
+                  </option>
+                  @foreach ($cities as $city)
+                     <option>{{ $city->city }}</option>
+                  @endforeach
+               </select>
+               <input type="submit" class="btn btn-primary" style="cursor: pointer" value="Search">
             </form>
          </div>
          </section>

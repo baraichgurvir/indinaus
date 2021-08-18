@@ -14,7 +14,7 @@
    <div class="container container-results">
       @foreach ($results as $result)
          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="{{ $result->image }}" alt="{{ $result->title }}">
+            <img class="card-img-top" src=".{{ $result->image }}" alt="{{ $result->title }}">
             <div class="card-body">
                <h5 class="card-title">{{ $result->title }}</h5>
                <div class="card-text">{{ $result->desc }}</div>

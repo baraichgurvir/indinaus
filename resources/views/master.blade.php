@@ -548,10 +548,10 @@ body.dark .logo img {
 
 .nav-link,
 .dropdown-item {
-   text-transform: uppercase;
 }
 
 .dropdown-item {
+	text-transform: uppercase;
    font-weight: bold
 }
 .main-sec-indinaus {
@@ -663,37 +663,7 @@ body.dark .logo img {
 		}
 	});  
 	
-  })(jQuery); 
-
-let tl = anime.timeline({
-    easing: 'easeOutExpo',
-    duration: 1000,
-    loop: true,
-    endDelay: 500
-  }); 
-  
-  tl.add({
-    targets: '.foxhead',
-    scale: [0.75, 1],
-    opacity: [0, 1],
-  })
-  .add({
-    targets: '.foxpart',
-    opacity: [0, 1],
-    delay: anime.stagger(200),
-    easing: 'easeInExpo',
-  }, '-=2000')
-  .add({
-    targets: '#name-g path',
-    opacity: [0, 1],
-    translateX: [-25, 0],
-    rotate: ['-45deg', 0],
-    delay: anime.stagger(100),
-  }, '-=500')
-  .add({
-    targets: 'svg',
-    opacity: [1, 0],
-  });
+  })(jQuery);
         </script>
    @yield('js')
    <footer style="padding: 2em;background: #fff;z-index: 999 !important;position: fixed;bottom: 0;left: 0;right: 0;display: flex;justify-content: space-between;align-items: center;">

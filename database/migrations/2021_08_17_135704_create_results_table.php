@@ -20,7 +20,8 @@ class CreateResultsTable extends Migration
             $table->text("rating");
             $table->text("desc");
             $table->text("price");
-            $table->text("subcat");
+            $table->text("city");
+            $table->text("website");
             $table->text("cat");
             $table->text("address");
             $table->text("phoneNumber");
