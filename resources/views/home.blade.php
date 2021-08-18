@@ -95,32 +95,9 @@
          <section style="width: 30% !important">
             <sidebar>
                <ul>
-                  <li><a href="/" style="text-decoration: none;">Accommodation</a></li>
-                  <li><a href="/" style="text-decoration: none;">Automotive</a></li>
-                  <li><a href="/" style="text-decoration: none;">Domestic Services</a></li>
-                  <li><a href="/" style="text-decoration: none;">Education & Learning</a></li>
-                  <li><a href="/" style="text-decoration: none;">Entertainment</a></li>
-                  <li><a href="/" style="text-decoration: none;">Event Organisation</a></li>
-                  <li><a href="/" style="text-decoration: none;">Financial Services</a></li>
-                  <li><a href="/" style="text-decoration: none;">Food & Beverages</a></li>
-                  <li><a href="/" style="text-decoration: none;">Hair & Beauty</a></li>
-                  <li><a href="/" style="text-decoration: none;">Health & Wellbeing</a></li>
-                  <li><a href="/" style="text-decoration: none;">Jobs & Recruitment</a></li>
-                  <li><a href="/" style="text-decoration: none;">Manufacturing & Agriculture</a></li>
-                  <li><a href="/" style="text-decoration: none;">Media & Communication</a></li>
-                  <li><a href="/" style="text-decoration: none;">Medical</a></li>
-                  <li><a href="/" style="text-decoration: none;">Natural Therapies</a></li>
-                  <li><a href="/" style="text-decoration: none;">Other</a></li>
-                  <li><a href="/" style="text-decoration: none;">Pets</a></li>
-                  <li><a href="/" style="text-decoration: none;">Professional Services</a></li>
-                  <li><a href="/" style="text-decoration: none;">Real Estate</a></li>
-                  <li><a href="/" style="text-decoration: none;">Religion & Spirituality</a></li>
-                  <li><a href="/" style="text-decoration: none;">Restaurants</a></li>
-                  <li><a href="/" style="text-decoration: none;">Sports & Recreation</a></li>
-                  <li><a href="/" style="text-decoration: none;">Stores</a></li>
-                  <li><a href="/" style="text-decoration: none;">Trade Services</a></li>
-                  <li><a href="/" style="text-decoration: none;">Utilities</a></li>
-                  <li><a href="/" style="text-decoration: none;">Web & IT Services</a></li>
+                  @foreach ($cats as $cat)
+                     <li><a href="/search?what={{ $cat->cat }}" style="text-decoration: none;">{{ $cat->cat }}</a></li>
+                  @endforeach
                </ul>
             </sidebar>
          </section>
@@ -158,8 +135,8 @@
          </div>
          <div class="overlay"></div>
          <div class="container">
-            <form action="#">
-               <input type="text" name="what" placeholder="What: Ex. Food, Services, Hotels">
+            <form action="/search">
+               <input type="text" name="what" style="text-transform: capitalize" placeholder="What: Ex. Food, Services, Hotels">
                <input type="text" name="where" placeholder="Where: Your City">
                <input type="submit" class="btn btn-primary" value="Search">
             </form>
